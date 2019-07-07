@@ -4,11 +4,95 @@
 	box-sizing: border-box;
 }
 html {
-    font-size:16px;
+    font-size:14px;
 }
 
-body
-{
-    line-height: 1,625;
+body {   
+    font-family: 'Amatic SC',sans-serif;
+    line-height: 1.625;
     margin:0;
 }
+
+a {
+    color:inherit;
+    text-decoration: none;
+    transition: color .3s;
+}
+
+.header {
+    background: url(images/bg.jpg) center center / cover no-repeat;
+    color: #FFF;
+    
+}
+
+.topbar {
+    padding: 20px 0;
+    font-size: .875rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.topbar a:hover {
+    color:#C89446;
+}
+
+.logo {
+    margin-bottom: 15px;
+}
+
+.menu-item {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.baseline {
+    padding:10px 0 110px 0;
+    text-align: center;
+}
+
+.baseline-welcome {
+    font-family: 'Amatic SC',sans-serif;
+    color:#C89446;
+    font-size:3.75rem;
+    display: block;
+    line-height: 1;
+    
+}
+.baseline-name {
+    
+    font-size: 4.375rem;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 11px;
+    display: block;
+    text-transform:uppercase;
+}
+.baseline-slogan {
+    
+    font-size: 1.5rem;
+    font-weight: 300;
+    display: block;
+    text-transform:uppercase;
+    font-weight: 700;
+    letter-spacing: 4px;
+    
+    
+}
+@media only screen and (min-width: 920px) {
+    html {
+        font-size: 16px;
+    }
+    .baseline-slogan {
+    
+    font-size: 1.5rem;
+    }
+    .baseline-name {
+    
+    font-size: 4.375rem;
+    }
+    .baseline-welcome {
+    font-size:3.75rem;
+    }
+    
+}
+
+
