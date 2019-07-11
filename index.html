@@ -3,15 +3,15 @@ Click sur l'onglet "Validate by Direct Input" et colle ton code HTML, click ensu
 Tu peux jeter un oeil par ici pour en savoir un peu plus: https://www.243tech.com/valider-vos-codes-html-et-css-sur-validator-w3-org/ -->
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    
+    <meta name="viewport" content="initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    
+
     <title>Wild Circus</title>
 </head>
 
@@ -28,7 +28,7 @@ Tu peux jeter un oeil par ici pour en savoir un peu plus: https://www.243tech.co
                 <a class="menu-item" href="#about">About Us</a>
                 <a class="menu-item" href="#prices">Prices</a>
                 <a class="menu-item" href="#contact">Contact</a>
-                <a class="menu-item" href="#prices">Make reservation</a>
+                
             </nav>
         </div>
         <div class="baseline">
@@ -36,14 +36,15 @@ Tu peux jeter un oeil par ici pour en savoir un peu plus: https://www.243tech.co
             <strong class="baseline-name">Wild Circus</strong>
             <span class="baseline-slogan">The most incredible show in the world</span>
         </div>
-        
+
     </header>
 
     <section id="performances">
         <h2>Performances</h2>
-        
-        
+
+
         <!-- TODO: En utilisant du css place ces trois performances ("lough", "dream, "marvel at") sur la même ligne en enlevant le point généré par la balise "li". Attention, utilise bien le css pour aligner les éléments, tu ne dois pas enlever les balises "li"-->
+
         <ul id="perf">
             <!-- performance 1 -->
             <li class="performance">
@@ -59,15 +60,16 @@ Tu peux jeter un oeil par ici pour en savoir un peu plus: https://www.243tech.co
             <li class="performance">
                 <h3>Marvel at</h3>
                 <p>Tame the untameable in the company of our tamers, between roar and razor-sharp claws, watch these fierce felines turn into sweet kittens.</p>
-                
+
             </li>
         </ul>
+
     </section>
 
     <hr />
 
     <section id="about">
-        
+
         <h2>About Us</h2>
         <!-- TODO: Cette section n'a pas encore été réalisée, tu as carte blanche pour nous montrer ta créativité -->
         <p>Created in Marseille in 1932 by the brothers Marius and César Ollivier, specialists in equestrian art, the wild circus throngs American soil for the first time in 1975 for a series of performances. Very quickly, the back and forth between the two countries multiply before a final installation in the United States in 1984 under the leadership of Panisse Ollivier, the son of Marius.</p>
@@ -84,41 +86,54 @@ Tu peux jeter un oeil par ici pour en savoir un peu plus: https://www.243tech.co
         Semaines hors mercredi  |         |                         |                                |
         week-end et mercredi    |         |                         |                                |
       -->
-        
-            <table id="table-prices">
-                <thead>
-                    <tr>
-                        <th>&nbsp;</th>
-                        <th>Adultes<br> <input class="button" type="button" value="-" id="moins" onclick="minus()">
-                            <input class="number" id="count" type="text" value="2">
-                            <input class="button" type="button" value="+" id="plus" onclick="plus()"></th>
-                        <th>Enfants de moins de 12 ans<br><input class="button" type="button" value="-" id="moins" onclick="minus()">
-                            <input class="number" id="count" type="text" value="2">
-                            <input class="button" type="button" value="+" id="plus" onclick="plus()"></th>
-                        <th>Groupes (plus de 10 personnes)</th>
-                        <th>Ecoles</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Semaines hors mercredi</td>
-                        <td> Prix = </td>
-                        <td> Prix = </td>
-                        <td> Prix = </td>
-                        <td> Prix = </td>
-                    </tr>
-                    <tr>
-                        <td>Week-end et Mercredi</td>
-                        <td> Prix = </td>
-                        <td> Prix = </td>
-                        <td> Prix = </td>
-                        <td> Prix = </td>
-                    </tr>
 
-                </tbody>
+        <table id="table-prices">
+            <thead>
+                <tr>
+                    <th>Cliquez sur +/-<br>
+                    pour<br>
+                    modifier le nb </th>
+                    <th>Adultes<br> <input class="button" type="button" value="-" id="moinsAdulte" onclick="minus(countAdulte)">
+                        
+                        <input class="number" id="countAdulte" type="text" value="2">
+                        
+                        <input class="button" type="button" value="+" id="plusAdulte" onclick="plus(countAdulte)"></th>
+                    
+                    <th>Enfants de moins de 12 ans<br><input class="button" type="button" value="-" id="moinsEnfant" onclick="minus(countEnfant)">
+                        
+                        <input class="number" id="countEnfant" type="text" value="2">
+                        
+                        <input class="button" type="button" value="+" id="plusEnfant" onclick="plus(countEnfant)"></th>
+                    <th>Groupes (plus de 10 personnes)<input class="button" type="button" value="-" id="moinsGroupe" onclick="minus(countGroupe)">
+                        
+                        <input class="number" id="countGroupe" type="text" value="10">
+                        
+                        <input class="button" type="button" value="+" id="plusGroupe" onclick="plus(countGroupe)"></th>
+                    <th>Ecoles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Semaines hors mercredi</td>
+                    <td id="prixAdulteSHM"> 40 €</td>
+                    <td id="prixEnfantSHM"> 20 €</td>
+                    <td id="prixGroupeSHM"> 160 € </td>
+                    <td> Nous consulter</td>
+                </tr>
+                <tr>
+                    <td>Week-end et Mercredi</td>
+                    <td id="prixAdulteWM"> 50 €</td>
+                    <td id="prixEnfantWM"> 30 €</td>
+                    <td id="prixGroupeWM"> 180 € </td> 
+                    <td> Nous consulter</td>
+                </tr>
+                
+                
 
-            </table>
-        
+            </tbody>
+
+        </table>
+
     </section>
 
     <hr />
@@ -126,14 +141,14 @@ Tu peux jeter un oeil par ici pour en savoir un peu plus: https://www.243tech.co
     <section id="contact">
         <h2>Contact Us</h2>
         <div id="contact-form">
-            <form>
-                <label for="nom">Nom </label><input type="texte" name="nom" placeholder=" Votre Nom" focus="nom">
-                <label for="email">Email </label><input type="email" name="email" placeholder=" Votre email">
-                <input type="submit" name="submit" value="Envoyer">
+            <form action="" method="get">
+                <label for="nom" class="left">Nom *</label><input type="text" name="nom" placeholder=" Votre Nom" focus="nom" required>
+                <label for="email">Email *</label><input type="email" name="email" placeholder=" Votre email" required>
+                <input type="submit" name="submit" value="Envoyer" required>
             </form>
             <form>
-                <label for="message">Message *</label>
-                <textarea id="message" name="message" placeholder="Votre message" rows="4" value=""></textarea>
+                <label for="message" class="message">Message *</label>
+                <textarea id="message" id="" name="message" placeholder="Votre message" cols="30" rows="5"></textarea>
 
             </form>
         </div>
@@ -141,17 +156,15 @@ Tu peux jeter un oeil par ici pour en savoir un peu plus: https://www.243tech.co
         Ce formulaire n'a pas besoin d'être fonctionnel, réalise juste la mise en forme.
       -->
     </section>
-
+    <hr />
     <footer>
         <!-- TODO: Entre ton nom et prénom.
         Mets en place un lien vers le site de la Wild Code School (https://wildcodeschool.fr) ainsi que le lien vers ton profil public France.ioi (avec les 16 premiers exercies de réalisés).
         Tu peux egalement mettre un lien sur ton nom vers ton site, ton blog ou ton profil github ou linkedin, si tu en a un.
        -->
-        <p>Wild Circus by Stephan BERGER</p> - <a href="http://www.france-ioi.org/user/perso.php?sLogin=rencho" target="_blank">France-IOI</a> - <a href="https://www.sololearn.com/Profile/3824234" target="_blank">SoloLearn</a> - <a href="https://wildcodeschool.fr/" href="_blank">Wild Code School</a>
-        <p> - réalisé le 20/06/2019</p>
+        <p>Wild Circus by Stephan BERGER - <a href="http://www.france-ioi.org/user/perso.php?sLogin=rencho" target="_blank">France-IOI</a> - <a href="https://www.sololearn.com/Profile/3824234" target="_blank">SoloLearn</a> - <a href="https://wildcodeschool.fr/" href="_blank">Wild Code School</a></p>
+        <p> - réalisé le 11/07/2019</p>
     </footer>
 
     <script src="script.js"></script>
-</body>
-
-</html>
+</body></html>
