@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     window.onscroll = function (ev) {
-        document.getElementById("cRetour").className = (window.pageYOffset > 250) ? "cVisible" : "cInvisible";
+        document.getElementById("cRetour").className = (window.pageYOffset > 200) ? "cVisible" : "cInvisible";
     };
 });
 
@@ -33,7 +33,7 @@ var prixGroupeWM = 18;
 
 
 function plus(nbPersonne) {
-    
+    console.log(nbPersonne.value);
     if (nbPersonne.id=="countAdulte" || nbPersonne.id=="countEnfant") {
     if (nbPersonne.value < 9) {
         nbPersonne.value++;
@@ -47,6 +47,7 @@ function plus(nbPersonne) {
         nbPersonne.value++;
         majPrix(nbPersonne);
     }
+    console.log(nbPersonne.value);
 }
 
 
