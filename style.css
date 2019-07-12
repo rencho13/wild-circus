@@ -23,6 +23,366 @@ section {
 li {
     list-style-type: none;
 }
+/* GENERAL */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: 'Amatic SC', sans-serif;
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+section {
+    padding-bottom: 30px
+}
+
+li {
+    list-style-type: none;
+}
+
+.retour {
+    position: fixed;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color .3s;
+}
+
+.header {
+    background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(28, 28, 28, 0.01)),
+        url(https://image.noelshack.com/fichiers/2019/28/5/1562905290-bg.jpg) center center / cover no-repeat;
+
+    color: #FFF;
+
+}
+
+h2 {
+    text-align: center;
+    margin:30px 0px;
+    text-shadow: 11px 2px 8px rgba(46,31,206,0.6);
+}
+
+/* RETOUR HAUT DE PAGE */
+
+a#cRetour {
+    border-radius: 3px;
+    padding: 15px;
+    font-size: 50px;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.25);
+    position: fixed;
+    right: 40px;
+    opacity: 1;
+    z-index: 99999;
+    transition: all ease-in 0.2s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    text-decoration: none;
+}
+
+a#cRetour:before {
+    content: "\25b2";
+}
+
+a#cRetour:hover {
+    background: rgba(0, 0, 0, 1);
+    transition: all ease-in 0.2s;
+}
+
+a#cRetour.cInvisible {
+    bottom: -35px;
+    opacity: 0;
+    transition: all ease-in 0.5s;
+}
+
+a#cRetour.cVisible {
+    bottom: 30px;
+    opacity: 1;
+}
+
+/* HEADER */
+
+.topbar {
+    padding: 20px 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.topbar a:hover {
+    color: #C89446;
+}
+
+.logo {
+    margin-bottom: 15px;
+}
+
+.menu-item {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.baseline {
+    padding: 10px 0 110px 0;
+    text-align: center;
+}
+
+.baseline-welcome {
+    font-family: 'Amatic SC', sans-serif;
+    color: #C89446;
+    font-size: 2.5rem;
+    display: block;
+    line-height: 1;
+
+}
+
+.baseline-name {
+
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: 11px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.baseline-slogan {
+
+    font-size: 1.5rem;
+    font-weight: 300;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+
+}
+
+/* PERFORMANCES */
+
+#performances h2 {
+    text-align: center;
+}
+
+.performance {
+    width: 100%;
+    padding: 10px
+}
+
+.performance h3 {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0;
+
+}
+
+.performance p {
+    font-size: 0.8rem;
+    text-align: justify;
+    font-family: cursive;
+    line-height: 1;
+    margin: 0;
+}
+
+/* ABOUT */
+#about h2 {
+    margin:30px 0px;
+}
+#about p {
+    padding-top: 15px;
+    text-align: center;
+    font-size: 1rem;
+    font-family: cursive;
+}
+
+/* PRICES */
+#prices h2{
+    margin:30px 0px;
+}
+
+#table-prices {
+
+    margin: auto;
+    min-width: 360px;
+
+    text-align: center;
+    font-size: 1rem;
+    font-family: cursive;
+
+}
+
+table {
+    background: grey;
+    border-collapse: collapse;
+    border: medium solid #000000;
+}
+
+.number {
+    width: 30px;
+    font-size: 1rem;
+}
+
+#grise {
+    background-color: #BBB;
+}
+
+td,
+th {
+    background-color: white;
+    padding: 10px;
+    min-width: 100px;
+    border: thin solid #6495ed;
+}
+
+
+.button {
+    border: none;
+    background: none;
+    font-size: 1rem;
+}
+
+
+
+/* FORMULAIRE */
+form{
+	border: 1px solid #C89446;
+	padding:10px;
+	background-color:#C89446;
+}
+label.left{
+	float: left;
+	
+	font-weight:bold;
+}
+
+
+/* CONTACT */
+#contact h2 {
+    margin:30px 0px;
+}
+#contact-form {
+
+    font-size: 1rem;
+    font-family: cursive;
+    display: inline;
+}
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+#contact-form input[type=text]input[type=email]{
+  width: 150px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type=text]:focus {
+  background-color: lightblue;
+}
+input[type=email]:focus {
+  background-color: lightblue;
+}
+
+/* FOOTER */
+footer a {
+    text-decoration:underline;
+}
+footer a:hover {
+    text-decoration:underline;
+    color:orange;
+}
+
+p {
+    display: inline;
+    font-size: 1rem;
+    font-family: cursive
+}
+
+@media only screen and (min-width: 530px) {
+    html {
+        font-size: 1rem;
+    }
+
+    .topbar {
+        padding: 20px 0;
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+
+    }
+
+  
+    .baseline-slogan {
+
+        font-size: 1.5rem;
+    }
+
+    .baseline-name {
+
+        font-size: 4.375rem;
+    }
+
+    .baseline-welcome {
+        font-size: 3.75rem;
+    }
+
+    .performance h3 {
+        font-size: 2rem;
+        text-align: center;
+        padding: 0;
+
+    }
+
+    .performance p {
+        font-size: 0.8rem;
+        text-align: justify;
+        font-family: cursive;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    #perf {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #about p {
+        text-align: center;
+        font-size: 0.8rem;
+        font-family: cursive;
+        line-height: 1.5;
+    }
+
+    a#cRetour {
+
+        font-size: 30px;
+    }
+}
 
 .retour {
     position: fixed;
